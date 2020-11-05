@@ -10,4 +10,3 @@ Session = scoped_session(sessionmaker(bind=engine, autoflush=False, autocommit=F
 session = Session()
 
 Base = declarative_base()
-Base.query = session.query_property()
