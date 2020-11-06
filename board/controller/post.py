@@ -11,3 +11,16 @@ def post(title, content):
     return {
         "message": "posting Successfully"
     }
+
+
+def get_posts():
+    posts = session.query(Post).order_by(Post.created_at.desc()).all()
+
+    return {
+        "posts": [{
+            "id": post.id,
+            "title": post.title,
+            "content": post.content,
+            "created_at": str(post.created_at)
+        } for post in posts]
+    }
