@@ -28,7 +28,7 @@ class UpdatePost(Resource):
 class Post(Resource):
 
     def post(self):
-        # [?] 글자수를 체크 해줘야 할까?
+        # [+]글자 수 체크 데코레이터 만들기
         title = request.json['title']
         content = request.json['content']
 
