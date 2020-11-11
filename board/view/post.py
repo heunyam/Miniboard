@@ -2,7 +2,8 @@ from flask_restful import Resource
 from flask import request
 from board.controller.post import (
     post,
-    get_posts
+    get_posts,
+    delete_post
 )
 
 
@@ -16,7 +17,7 @@ class GetPosts(Resource):
 class DeletePost(Resource):
 
     def delete(self, post_id):
-        pass
+        return delete_post(post_id)
 
 
 class UpdatePost(Resource):
