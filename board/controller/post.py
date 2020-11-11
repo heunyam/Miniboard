@@ -39,3 +39,18 @@ def delete_post(post_id):
     return {
         "message": "Sucessfully deleted"
     }
+
+
+def modify_post(post_id, title, content):
+    post = session.query(Post).filter(Post.id == post_id).first()
+
+    if post:
+        post.title = title
+        post.content = content
+        session.commit()
+    else:
+        return abort(404, f"The {post_id} is no corresponding post")
+
+    return {
+        "message": "Sucessfully modifying"
+    }
