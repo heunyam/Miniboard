@@ -8,29 +8,22 @@ from board.controller.post import (
 )
 
 
-class GetPosts(Resource):
+class Post(Resource):
 
-    def get(self):
-        return get_posts()
-
-
-class DeletePost(Resource):
-
-    def delete(self, post_id):
-        return delete_post(post_id)
-
-
-class ModifyPost(Resource):
-
-    def put(self):
-        post_id = request.json['post_id']
+    def put(self, post_id):
         title = request.json['title']
         content = request.json['content']
 
         return modify_post(post_id, title, content)
 
+    def delete(self, post_id):
+        return delete_post(post_id)
 
-class Post(Resource):
+
+class Posts(Resource):
+
+    def get(self):
+        return get_posts()
 
     def post(self):
         # [+] 글자 수 체크 데코레이터 만들기
