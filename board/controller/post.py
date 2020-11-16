@@ -34,7 +34,7 @@ def delete_post(post_id):
         session.delete(post)
         session.commit()
     else:
-        return abort(404, f"The {post_id} is no corresponding post")
+        abort(404, f"The number {post_id} post is no corresponding post")
 
     return {
         "message": "Sucessfully deleted"
@@ -49,7 +49,7 @@ def modify_post(post_id, title, content):
         post.content = content
         session.commit()
     else:
-        return abort(404, f"The {post_id} is no corresponding post")
+        abort(404, f"The {post_id} is no corresponding post")
 
     return {
         "message": "Sucessfully modifying"
