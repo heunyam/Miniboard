@@ -2,7 +2,7 @@
 # Created by https://www.toptal.com/developers/gitignore/api/flask,pycharm,python
 # Edit at https://www.toptal.com/developers/gitignore?templates=flask,pycharm,python
 
-board/config.py
+config/config.py
 
 
 
