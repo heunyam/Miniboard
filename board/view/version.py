@@ -8,5 +8,5 @@ from board.controller.version import check_recently_version
 class VersionCheck(Resource):
 
     def get(self, android_version):
-        android_version
+
         return check_recently_version(android_version)
